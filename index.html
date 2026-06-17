@@ -22,260 +22,173 @@
           <li><a href="index.html" class="active" id="nav-home">Home</a></li>
           <li><a href="privacy.html" id="nav-privacy">Privacy Policy</a></li>
           <li><a href="terms.html" id="nav-terms">Terms of Service</a></li>
-          <li><a href="https://www.roblox.com/library/" target="_blank" rel="noopener noreferrer" class="btn-rect btn-rect-outline-yellow" id="nav-cta-install" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Install Plugin</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="container" id="hero-section">
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <span class="hero-tag">Figma to Roblox Sync</span>
-          <h1 class="hero-title-main">The Next Gen <span>UI Design</span> Pipeline</h1>
-          <p class="hero-paragraph">
-            Export canvas elements, frames, and custom images directly from Figma into Roblox. A secure bridge leveraging Roblox OAuth 2.0 and Cloudflare Workers with zero database retention.
-          </p>
-          <div class="hero-buttons">
-            <a href="https://www.roblox.com/library/" target="_blank" rel="noopener noreferrer" class="btn-rect btn-rect-yellow" id="btn-install-plugin">
-              Install Plugin
-            </a>
-            <a href="privacy.html" class="btn-rect btn-rect-outline" id="btn-learn-more">
-              Privacy Policy
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="planet.png" alt="Mars Space Orb Graphic" class="hero-planet-img">
-        </div>
+    <section class="hero container" id="hero-section">
+      <span class="hero-tagline">Roblox OAuth Integration</span>
+      <h1 class="hero-title">Sync UI Assets Instantly to <span>Roblox</span></h1>
+      <p class="hero-desc">
+        A secure bridge between your Figma design tools and Roblox Studio. Authorize once, and upload layouts, images, and fonts straight to your inventory.
+      </p>
+      <div class="hero-actions">
+        <a href="https://www.roblox.com/library/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-install-plugin">
+          Install Roblox Plugin
+        </a>
+        <a href="#scopes-section" class="btn btn-secondary" id="btn-learn-more">
+          Understand Permissions
+        </a>
       </div>
     </section>
 
-    <section class="container" id="beige-highlight-section">
-      <div class="beige-card-frame">
-        <div class="beige-card-layout">
-          <div class="beige-card-visual" id="mockup-display">
-            <div style="font-family: monospace; font-size: 0.85rem; color: var(--text-sand); width: 100%; text-align: left; z-index: 5;">
-              <p style="color: var(--accent-yellow); margin-bottom: 0.5rem;">// Synchronizing local design canvas...</p>
-              <p style="margin-bottom: 0.3rem; color: #fff;">➔ Exporting 14 custom frames to assets API</p>
-              <p style="margin-bottom: 0.3rem; color: #a3a3a3;">➔ Forwarding OAuth credentials securely...</p>
-              <p style="margin-bottom: 0.8rem; color: #10b981;">✔ Success: Images uploaded to profile inventory</p>
-              <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 0.8rem;">
-              <p style="color: var(--text-grey); font-size: 0.75rem;">Processing complete. Volatile edge cache destroyed.</p>
+    <section class="info-section container" id="scopes-section">
+      <h2 class="section-title">Understanding Roblox App Scopes</h2>
+      <div class="grid-3">
+        <div class="panel card" id="card-scope-read">
+          <div class="card-icon">
+            <span>🔍</span>
+          </div>
+          <h3 class="card-title">assets:read</h3>
+          <p>
+            Enables the UI Designer plugin to view existing assets in your Roblox inventory. This helps prevent uploading duplicates and allows you to select already uploaded assets inside your designer panel.
+          </p>
+        </div>
+        <div class="panel card" id="card-scope-write">
+          <div class="card-icon">
+            <span>📤</span>
+          </div>
+          <h3 class="card-title">assets:write</h3>
+          <p>
+            Allows the plugin to upload newly generated user interface images, decals, and visual files directly to your Roblox profile, creating a seamless export experience.
+          </p>
+        </div>
+        <div class="panel card" id="card-scope-security">
+          <div class="card-icon">
+            <span>🛡️</span>
+          </div>
+          <h3 class="card-title">OAuth 2.0 Security</h3>
+          <p>
+            Tokens are authenticated directly through Roblox. You have complete control to revoke this application's access at any time through your Roblox account settings panel.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel scope-validator-box" id="scope-validator">
+        <h3 style="margin-bottom: 2rem; font-size: 1.6rem; text-align: center; font-family: 'Outfit', sans-serif;">
+          What this integration does with your permissions
+        </h3>
+        <div class="scope-grid">
+          <div class="panel scope-list-panel allowed" id="panel-allowed-scopes">
+            <div class="scope-header allowed">
+              <span>✓</span> What is ALLOWED
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Exporting images, custom icons, and interface files from Figma to your Roblox account using the <code class="scope-code">assets:write</code> API.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Listing your account's own assets to locate and select existing images using the <code class="scope-code">assets:read</code> API.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Caching your OAuth access token locally in Roblox Studio's secure plugin storage or Figma secure local storage.
+              </span>
             </div>
           </div>
-          <div class="beige-card-info">
-            <h3>EXPORT CANVAS SECURELY</h3>
+          <div class="panel scope-list-panel forbidden" id="panel-forbidden-scopes">
+            <div class="scope-header forbidden">
+              <span>✗</span> What is FORBIDDEN
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Account Takeover:</strong> Cannot read or modify your Roblox password, security settings, or email.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Financial Access:</strong> Cannot spend Robux, buy or trade items, or view transaction histories.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Game Modification:</strong> Cannot alter your places, publish scripts, or affect your game servers.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section container" id="security-architecture">
+      <div class="panel security-highlight" id="security-panel">
+        <div class="security-grid">
+          <div class="security-content">
+            <span class="security-badge">🔒 Cloudflare Workers Integration</span>
+            <h3>Zero-Retention Ephemeral Architecture</h3>
             <p>
-              UI Designer Pro bridges the gap between your workspace and Roblox Studio. By utilizing a secure serverless proxy, your asset payloads are processed instantly and uploaded directly to your inventory without storing credentials on external databases.
+              Your security is our absolute priority. To sync assets, the Figma plugin communicates with a secure serverless <strong>Cloudflare Worker</strong> that processes authorization and upload requests.
             </p>
-            <a href="terms.html" class="btn-rect btn-rect-yellow" id="btn-beige-read-terms">
-              Read Terms
-            </a>
+            <div class="workflow-steps">
+              <div class="wf-step">
+                <div class="wf-num">1</div>
+                <div class="wf-text">
+                  <strong>Token Exchange:</strong> The OAuth token is forwarded from the Figma plugin to the Cloudflare Worker purely to sign the Roblox API request.
+                </div>
+              </div>
+              <div class="wf-step">
+                <div class="wf-num">2</div>
+                <div class="wf-text">
+                  <strong>Ephemeral Transit:</strong> Assets and credentials exist only in the Worker's active RAM for the few milliseconds it takes to complete the upload to Roblox.
+                </div>
+              </div>
+              <div class="wf-step">
+                <div class="wf-num">3</div>
+                <div class="wf-text">
+                  <strong>No Database Storage:</strong> We do not operate a database. Your tokens, designs, and Roblox information are <strong>never stored</strong> and are completely inaccessible to the developer.
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container split-layout" id="scopes-section">
-      <div class="split-left">
-        <span class="hero-tag" style="margin-bottom: 0.75rem;">Roblox OAuth Scopes</span>
-        <h3>Streamline your UI workflow.</h3>
-        <p>
-          We request strictly scoped permissions to interface with your Roblox account. We never request full account controls, financial details, or editing rights to your places.
-        </p>
-      </div>
-      <div class="split-right">
-        <div class="right-card" id="card-assets-read">
-          <div class="right-card-content">
-            <h4>assets:read</h4>
-            <p>Lists existing decals and images in your inventory to avoid duplicate uploads and enable asset reuse.</p>
+          <div class="security-visual-card" id="security-visual">
+            <div class="code-title">// Ephemeral Transit Flow</div>
+            <p style="margin-bottom: 0.75rem;">Figma Plugin</p>
+            <p style="margin-bottom: 0.75rem; color: var(--primary);">➔ Cloudflare Worker (In-Memory Processing)</p>
+            <p style="margin-bottom: 0.75rem; color: #10b981;">➔ Roblox API (Asset Uploaded)</p>
+            <p style="margin-bottom: 1.25rem;">➔ Response Returned to Figma</p>
+            <hr style="border: 0; border-top: 1px solid var(--border-glass); margin-bottom: 1rem;">
+            <div style="color: #ef4444; font-weight: bold;">[Result]</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">
+              Worker execution ends. Memory is immediately wiped. Developer storage = 0%
+            </p>
           </div>
-          <a href="#scope-validator" class="btn-rect btn-rect-outline-yellow" style="padding: 0.5rem 1rem; font-size: 0.75rem; flex-shrink: 0;">Details</a>
-        </div>
-        <div class="right-card" id="card-assets-write">
-          <div class="right-card-content">
-            <h4>assets:write</h4>
-            <p>Allows the Figma plugin to compile and upload design frames directly to your Roblox account on your behalf.</p>
-          </div>
-          <a href="#scope-validator" class="btn-rect btn-rect-outline-yellow" style="padding: 0.5rem 1rem; font-size: 0.75rem; flex-shrink: 0;">Details</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats-banner" id="statistics-banner">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <span class="stat-num">100%</span>
-          <span class="stat-title">Ephemeral</span>
-          <span class="stat-desc">Zero storage of access keys or asset payloads</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">0 ms</span>
-          <span class="stat-title">Retention</span>
-          <span class="stat-desc">Data exists in memory strictly for transit duration</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">1 Click</span>
-          <span class="stat-title">Export</span>
-          <span class="stat-desc">Push files directly from design canvas to Roblox</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">50k+</span>
-          <span class="stat-title">Operations</span>
-          <span class="stat-desc">Processed ephemerally for Roblox developers</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" id="scope-validator" style="padding: 4rem 0;">
-      <div class="heading-group" style="text-align: center; margin-bottom: 3rem;">
-        <h2>Scope Capabilities</h2>
-        <span class="ghost-title" style="left: 50%; transform: translateX(-50%);">CAPABILITIES</span>
-      </div>
-      <div class="scope-grid-custom">
-        <div class="scope-list-card allowed" id="allowed-scopes">
-          <div class="scope-list-header allowed">
-            <span>✓</span> ALLOWED ACTIONS
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              Exporting images, custom icons, and interface files from Figma to your Roblox account using <code class="scope-code">assets:write</code>.
-            </span>
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              Listing your account's own assets to locate and select existing images using <code class="scope-code">assets:read</code>.
-            </span>
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              Temporarily caching the active Roblox access token inside Figma local secure plugin storage.
-            </span>
-          </div>
-        </div>
-        <div class="scope-list-card forbidden" id="forbidden-scopes">
-          <div class="scope-list-header forbidden">
-            <span>✗</span> FORBIDDEN ACTIONS
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              <strong>No Account Controls:</strong> Cannot view or modify your account password, email, or security settings.
-            </span>
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              <strong>No Robux Transactions:</strong> Cannot spend Robux, purchase library assets, or trade items.
-            </span>
-          </div>
-          <div class="scope-list-item">
-            <span class="scope-list-bullet">•</span>
-            <span class="scope-list-text">
-              <strong>No Code Access:</strong> Cannot edit, publish, or read place scripts or game server code.
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container split-layout" id="security-transit-detail">
-      <div class="split-left">
-        <div class="heading-group">
-          <h2>Secure Transmission</h2>
-          <span class="ghost-title">SECURITY</span>
-        </div>
-        <p style="margin-bottom: 1.5rem;">
-          To guarantee the privacy of your developer credentials, the Figma plugin communicates with a secure serverless <strong>Cloudflare Worker</strong>. This worker operates as an ephemeral proxy.
-        </p>
-        <p>
-          The OAuth access token and binary design data are processed purely in-memory (RAM) during transit and uploaded directly to official Roblox APIs. The worker never saves logs, holds records, or uses a database. The developer has absolutely no visibility or access to your credentials or files.
-        </p>
-      </div>
-      <div class="split-right" style="justify-content: center;">
-        <div class="panel" style="border: 1px solid var(--border-light); padding: 2.5rem; background: #000;">
-          <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; margin-bottom: 1rem; color: var(--accent-yellow);">Edge Transit Loop</h4>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; color: var(--text-sand); font-size: 0.92rem;">
-            <li style="display: flex; gap: 0.75rem;"><span style="color: var(--accent-yellow);">01.</span> Request dispatched from Figma</li>
-            <li style="display: flex; gap: 0.75rem;"><span style="color: var(--accent-yellow);">02.</span> TLS Encryption secures payload</li>
-            <li style="display: flex; gap: 0.75rem;"><span style="color: var(--accent-yellow);">03.</span> Cloudflare Worker processes in RAM</li>
-            <li style="display: flex; gap: 0.75rem;"><span style="color: var(--accent-yellow);">04.</span> Roblox API receives files</li>
-            <li style="display: flex; gap: 0.75rem;"><span style="color: var(--accent-yellow);">05.</span> Worker memory wiped instantly</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" id="documentation-section" style="padding: 4rem 0 6rem;">
-      <div class="section-heading-center">
-        <span class="hero-tag" style="margin-bottom: 0.75rem;">Documentation Center</span>
-        <h3>Browse App Documentation</h3>
-      </div>
-      <div class="doc-grid">
-        <div class="doc-card" id="doc-card-privacy">
-          <div class="doc-card-sphere"></div>
-          <span class="doc-card-date">June 2026</span>
-          <h4 class="doc-card-title">Privacy Policy</h4>
-          <p class="doc-card-desc">Detailed declarations outlining data privacy, token security, and the ephemeral transit loops processing your uploads.</p>
-          <a href="privacy.html" class="btn-rect btn-rect-outline-yellow" id="btn-read-privacy">Read Policy</a>
-        </div>
-        <div class="doc-card" id="doc-card-terms">
-          <div class="doc-card-sphere"></div>
-          <span class="doc-card-date">June 2026</span>
-          <h4 class="doc-card-title">Terms of Service</h4>
-          <p class="doc-card-desc">Terms governing the use of the Figma plugin, asset rights representation, and disclaimer of warranties.</p>
-          <a href="terms.html" class="btn-rect btn-rect-outline-yellow" id="btn-read-terms">Read Terms</a>
-        </div>
-        <div class="doc-card" id="doc-card-setup">
-          <div class="doc-card-sphere"></div>
-          <span class="doc-card-date">Setup Guide</span>
-          <h4 class="doc-card-title">Integration Guide</h4>
-          <p class="doc-card-desc">Quick guide outlining the installation of UI Designer Pro in Roblox Studio and linking with the Figma canvas.</p>
-          <a href="#scopes-section" class="btn-rect btn-rect-outline-yellow" id="btn-read-setup">View Guide</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer id="site-footer">
-    <div class="container">
-      <div class="footer-columns">
-        <div class="footer-about">
-          <div class="footer-logo">UI Designer Pro</div>
-          <p>
-            Secure, rapid assets export pipeline connecting your vector layout designs directly to Roblox Studio.
-          </p>
-        </div>
-        <div>
-          <div class="footer-col-title">Documentation</div>
-          <ul class="footer-links-list">
-            <li><a href="privacy.html" id="footer-privacy-link">Privacy Policy</a></li>
-            <li><a href="terms.html" id="footer-terms-link">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-col-title">Integrations</div>
-          <ul class="footer-links-list">
-            <li><a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer">Roblox Platform</a></li>
-            <li><a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma Community</a></li>
-          </ul>
-        </div>
+    <div class="container footer-wrapper">
+      <div>
+        <p>&copy; 2026 UI Designer Pro. Not affiliated with Roblox Corporation.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.25rem; color: var(--text-muted);">
+          Roblox, the Roblox logo, and Roblox Studio are trademarks of Roblox Corporation.
+        </p>
       </div>
-      <div class="footer-bottom">
-        <div>
-          <p>&copy; 2026 UI Designer Pro. Not affiliated with Roblox Corporation.</p>
-          <p style="font-size: 0.75rem; margin-top: 0.25rem;">
-            Roblox, the Roblox logo, and Roblox Studio are trademarks of Roblox Corporation.
-          </p>
-        </div>
-        <div>
-          <p>Created by kodabkr</p>
-        </div>
+      <div class="footer-links">
+        <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+        <a href="terms.html" id="footer-terms">Terms of Service</a>
       </div>
     </div>
   </footer>
