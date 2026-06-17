@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - UI Designer Sync</title>
-  <meta name="description" content="Privacy Policy for UI Designer Sync Roblox integration. Read about how we process your Roblox OAuth tokens ephemerally via Cloudflare Workers.">
+  <title>Privacy Policy - UI Designer Pro</title>
+  <meta name="description" content="Privacy Policy for UI Designer Pro. Read about how we process your Roblox OAuth tokens ephemerally via Cloudflare Workers.">
   
   <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Core Stylesheet -->
+  <!-- Central Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,13 +20,14 @@
   <header id="site-header">
     <div class="container nav-wrapper">
       <div class="logo-area">
-        <span class="logo-text">UI Designer Sync</span>
+        <span class="logo-text">UI Designer Pro</span>
       </div>
       <nav id="main-navigation">
         <ul>
           <li><a href="index.html" id="nav-home">Home</a></li>
           <li><a href="privacy.html" class="active" id="nav-privacy">Privacy Policy</a></li>
           <li><a href="terms.html" id="nav-terms">Terms of Service</a></li>
+          <li><a href="https://www.roblox.com/library/" target="_blank" rel="noopener noreferrer" class="btn-rect btn-rect-outline-yellow" id="nav-cta-install" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Install Plugin</a></li>
         </ul>
       </nav>
     </div>
@@ -44,32 +45,32 @@
         <section id="sec-introduction">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to the Privacy Policy for <strong>UI Designer Sync</strong> ("we," "our," or "the Application"). We are committed to protecting your privacy and security. This document outlines how our application interacts with your Roblox account when you authorize it through the Roblox OAuth 2.0 system.
+            Welcome to the Privacy Policy for <strong>UI Designer Pro</strong> ("we," "our," or "the Application"). We are committed to protecting your privacy and security. This document outlines how our application interacts with your Roblox account when you authorize it through the Roblox OAuth 2.0 system.
           </p>
           <p>
-            By installing the UI Designer Sync plugin in Roblox Studio and linking your account, you agree to the practices outlined in this Privacy Policy.
+            By installing the UI Designer Pro plugin in Roblox Studio, using the Figma paired plugin, and linking your account via the OAuth 2.0 application, you agree to the practices outlined in this Privacy Policy.
           </p>
         </section>
 
-        <!-- Section 2: Roblox OAuth Permissions -->
+        <!-- Section 2: Roblox OAuth Scopes -->
         <section id="sec-permissions">
           <h2>2. Roblox OAuth Scopes and Permissions</h2>
           <p>
-            To enable asset uploads directly from your design environment to your Roblox account, UI Designer Sync requests the following permissions from Roblox:
+            To enable asset uploads directly from your design environment to your Roblox account, UI Designer Pro requests the following permissions from Roblox:
           </p>
           <ul>
             <li>
               <strong>assets:read</strong>: Allows the application to retrieve a list of existing assets in your inventory. We use this to verify if an asset is already uploaded, preventing duplicates and allowing asset reuse.
             </li>
             <li>
-              <strong>assets:write</strong>: Allows the application to upload newly generated user interface layouts, images, decals, and visual files directly to your Roblox account on your behalf.
+              <strong>assets:write</strong>: Allows the application to upload newly generated user interface images, decals, and visual files directly to your Roblox account on your behalf.
             </li>
           </ul>
           
           <div class="alert-box purple" id="alert-scope-limit">
             <h4>🔒 Scope Limit and Safety</h4>
             <p>
-              These scopes are strictly limited. UI Designer Sync <strong>cannot</strong> access your private credentials (passwords, 2FA codes), read your email, buy or trade items, spend Robux, access group funds, or edit scripts and maps inside your places.
+              These scopes are strictly limited. UI Designer Pro <strong>cannot</strong> access your private credentials (passwords, 2FA codes), read your email, buy or trade items, spend Robux, access group funds, or edit scripts and maps inside your places.
             </p>
           </div>
         </section>
@@ -85,18 +86,18 @@
               <strong>No Database Storage:</strong> We do not operate, own, or rent any databases. No user information, access tokens, or uploaded file data is ever saved or written to persistent storage.
             </li>
             <li>
-              <strong>In-Transit Processing:</strong> When you execute an upload request from Roblox Studio, the local plugin routes the asset payload and the secure OAuth access token to a serverless <strong>Cloudflare Worker</strong>.
+              <strong>In-Transit Processing:</strong> When you execute an upload request from the Figma Plugin, the local plugin routes the asset payload and the secure OAuth access token to a serverless <strong>Cloudflare Worker</strong>.
             </li>
             <li>
               <strong>Immediate Deletion:</strong> The Cloudflare Worker processes the token and asset purely in volatile memory (RAM) to sign and forward the request to the official Roblox API. Once the Roblox API responds, the Worker terminates, and all information is immediately erased from memory.
             </li>
             <li>
-              <strong>No Developer Access:</strong> Because the processing is ephemeral and no database exists, the developer/owner of UI Designer Sync has **zero visibility or access** to your tokens, files, or Roblox profile information.
+              <strong>No Developer Access:</strong> Because the processing is ephemeral and no database exists, the developer/owner of UI Designer Pro has <strong>zero visibility or access</strong> to your tokens, files, or Roblox profile information. Think of the process as handing a letter to a mailman, and having them deliver the contents (Images Or Decals) to another home (Roblox), our product (The Mailman) does not ever open said package.
             </li>
           </ol>
         </section>
 
-        <!-- Section 4: Security and Transit -->
+        <!-- Section 4: Data Security -->
         <section id="sec-security">
           <h2>4. Data Security</h2>
           <p>
@@ -104,10 +105,10 @@
           </p>
           <ul>
             <li>
-              <strong>Encryption:</strong> All communication between the Roblox Studio plugin, the Cloudflare Worker proxy, and the Roblox API endpoints is fully encrypted using secure Hypertext Transfer Protocol (HTTPS / SSL/TLS).
+              <strong>Encryption:</strong> All communication between the Figma plugin, the Cloudflare Worker proxy, and the Roblox API endpoints is fully encrypted using secure Hypertext Transfer Protocol (HTTPS / SSL/TLS).
             </li>
             <li>
-              <strong>Local Token Cache:</strong> The OAuth token returned by Roblox is stored securely inside Roblox Studio's local plugin settings cache on your local computer. It is never exposed to external hosts other than our secure Cloudflare Worker proxy.
+              <strong>Local Token Cache:</strong> The OAuth token returned by Roblox is stored securely inside Figma's local secure plugin storage or Roblox Studio's settings cache on your local computer. It is never exposed to external hosts other than the secure Cloudflare Worker proxy.
             </li>
           </ul>
         </section>
@@ -116,30 +117,30 @@
         <section id="sec-third-parties">
           <h2>5. Third-Party Services</h2>
           <p>
-            Because UI Designer Sync integrates directly into Roblox, your use of the application is also governed by the policies of:
+            Because UI Designer Pro integrates directly into Roblox, your use of the application is also governed by the policies of:
           </p>
           <ul>
             <li>
-              <strong>Roblox Corporation:</strong> Assets uploaded are subject to the Roblox Terms of Use and Community Standards. You can review their privacy policy at the <a href="https://www.roblox.com/info/privacy" target="_blank" rel="noopener noreferrer">Roblox Privacy Policy</a> page.
+              <strong>Roblox Corporation:</strong> Assets uploaded are subject to the Roblox Terms of Use and Community Standards. You can review their privacy policy at the <a href="https://www.roblox.com/info/privacy" target="_blank" rel="noopener noreferrer">Roblox Privacy Policy</a>.
             </li>
             <li>
-              <strong>Cloudflare:</strong> The proxy processing is hosted on Cloudflare Workers. You can review their privacy policy at the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a> page.
+              <strong>Cloudflare:</strong> The proxy processing is hosted on Cloudflare Workers. You can review their privacy policy at the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>.
             </li>
           </ul>
         </section>
 
-        <!-- Section 6: Access Revocation -->
+        <!-- Section 6: How to Revoke Access -->
         <section id="sec-revocation">
           <h2>6. How to Revoke Access</h2>
           <p>
-            You are in complete control of your account access. You can disconnect UI Designer Sync from your Roblox account at any time:
+            You are in complete control of your account access. You can disconnect UI Designer Pro from your Roblox account at any time:
           </p>
           <ol>
             <li>Log in to your account on the official <strong>Roblox.com</strong> website.</li>
             <li>Navigate to your <strong>Settings</strong> page.</li>
             <li>Select the <strong>Security</strong> tab.</li>
             <li>Scroll down to the <strong>App Permissions</strong> or authorized applications section.</li>
-            <li>Locate <strong>UI Designer Sync</strong> and click <strong>Revoke Access</strong>.</li>
+            <li>Locate <strong>UI Designer Pro</strong> and click <strong>Revoke Access</strong>.</li>
           </ol>
           <p style="margin-top: 1rem;">
             Once access is revoked, the OAuth tokens cached on your computer will be immediately invalidated and cannot be used to read or write assets anymore.
@@ -154,29 +155,55 @@
           </p>
         </section>
 
-        <!-- Section 8: Contact Information -->
+        <!-- Section 8: Contact -->
         <section id="sec-contact">
           <h2>8. Contact</h2>
           <p>
-            If you have questions or concerns regarding this Privacy Policy or the security of UI Designer Sync, please contact the plugin developer via email or open an issue on the project's GitHub repository.
+            If you have questions or concerns regarding this Privacy Policy or the security of UI Designer Pro, please contact the plugin developer via email or open an issue on the project's GitHub repository.
           </p>
         </section>
       </div>
     </div>
   </main>
 
-  <!-- Footer Section -->
+  <!-- Solid Beige Block Footer -->
   <footer id="site-footer">
-    <div class="container footer-wrapper">
-      <div>
-        <p>&copy; 2026 UI Designer Sync. Not affiliated with Roblox Corporation.</p>
-        <p style="font-size: 0.8rem; margin-top: 0.25rem; color: var(--text-muted);">
-          Roblox, the Roblox logo, and Roblox Studio are trademarks of Roblox Corporation.
-        </p>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-about">
+          <div class="footer-logo">UI Designer Pro</div>
+          <p>
+            Secure, rapid assets export pipeline connecting your vector layout designs directly to Roblox Studio.
+          </p>
+        </div>
+        
+        <div>
+          <div class="footer-col-title">Documentation</div>
+          <ul class="footer-links-list">
+            <li><a href="privacy.html" id="footer-privacy-link">Privacy Policy</a></li>
+            <li><a href="terms.html" id="footer-terms-link">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <div class="footer-col-title">Integrations</div>
+          <ul class="footer-links-list">
+            <li><a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer">Roblox Platform</a></li>
+            <li><a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma Community</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
-        <a href="terms.html" id="footer-terms">Terms of Service</a>
+      
+      <div class="footer-bottom">
+        <div>
+          <p>&copy; 2026 UI Designer Pro. Not affiliated with Roblox Corporation.</p>
+          <p style="font-size: 0.75rem; margin-top: 0.25rem;">
+            Roblox, the Roblox logo, and Roblox Studio are trademarks of Roblox Corporation.
+          </p>
+        </div>
+        <div>
+          <p>Created by kodabkr</p>
+        </div>
       </div>
     </div>
   </footer>
