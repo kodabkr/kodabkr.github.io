@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Designer Sync - Roblox OAuth Documentation & Entry Link</title>
+  <meta name="description" content="Securely synchronize your UI designs and assets directly to your Roblox account. Read about our OAuth integration, assets:read/write scopes, and ephemeral Cloudflare Workers architecture.">
+  
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header id="site-header">
+    <div class="container nav-wrapper">
+      <div class="logo-area">
+        <span class="logo-text">UI Designer Sync</span>
+      </div>
+      <nav id="main-navigation">
+        <ul>
+          <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+          <li><a href="privacy.html" id="nav-privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" id="nav-terms">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container" id="hero-section">
+      <span class="hero-tagline">Roblox OAuth Integration</span>
+      <h1 class="hero-title">Sync UI Assets Instantly to <span>Roblox</span></h1>
+      <p class="hero-desc">
+        A secure bridge between your external UI design tools and Roblox Studio. Authorize once, and upload layouts, images, and fonts straight to your inventory.
+      </p>
+      <div class="hero-actions">
+        <a href="https://www.roblox.com/library/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-install-plugin">
+          Install Roblox Plugin
+        </a>
+        <a href="#scopes-section" class="btn btn-secondary" id="btn-learn-more">
+          Understand Permissions
+        </a>
+      </div>
+    </section>
+
+    <!-- Info / Permissions Section -->
+    <section class="info-section container" id="scopes-section">
+      <h2 class="section-title">Understanding Roblox App Scopes</h2>
+      
+      <div class="grid-3">
+        <!-- Scope Read -->
+        <div class="panel card" id="card-scope-read">
+          <div class="card-icon">
+            <span>🔍</span>
+          </div>
+          <h3 class="card-title">assets:read</h3>
+          <p>
+            Enables the UI Designer plugin to view existing assets in your Roblox inventory. This helps prevent uploading duplicates and allows you to select already uploaded assets inside your designer panel.
+          </p>
+        </div>
+
+        <!-- Scope Write -->
+        <div class="panel card" id="card-scope-write">
+          <div class="card-icon">
+            <span>📤</span>
+          </div>
+          <h3 class="card-title">assets:write</h3>
+          <p>
+            Allows the plugin to upload newly generated user interface components, decals, and images directly to your Roblox profile, creating a seamless export experience.
+          </p>
+        </div>
+
+        <!-- Scope Security -->
+        <div class="panel card" id="card-scope-security">
+          <div class="card-icon">
+            <span>🛡️</span>
+          </div>
+          <h3 class="card-title">OAuth 2.0 Security</h3>
+          <p>
+            Tokens are authenticated directly through Roblox. You have complete control to revoke this application's access at any time through your Roblox account settings panel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scope Allowed vs Forbidden Validator -->
+      <div class="panel scope-validator-box" id="scope-validator">
+        <h3 style="margin-bottom: 2rem; font-size: 1.6rem; text-align: center; font-family: 'Outfit', sans-serif;">
+          What this integration does with your permissions
+        </h3>
+        
+        <div class="scope-grid">
+          <!-- Allowed Operations -->
+          <div class="panel scope-list-panel allowed" id="panel-allowed-scopes">
+            <div class="scope-header allowed">
+              <span>✓</span> What is ALLOWED
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Uploading local images and assets from your UI design software to Roblox using the <code class="scope-code">assets:write</code> API.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Listing your account's own assets (decals/images) using the <code class="scope-code">assets:read</code> API so they can be previewed or reused in the design software.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                Caching your OAuth access token locally in Roblox Studio's secure plugin storage for auto-sync.
+              </span>
+            </div>
+          </div>
+
+          <!-- Forbidden Operations -->
+          <div class="panel scope-list-panel forbidden" id="panel-forbidden-scopes">
+            <div class="scope-header forbidden">
+              <span>✗</span> What is FORBIDDEN
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Account Takeover:</strong> Cannot read or modify your Roblox password, security settings, or email.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Financial Access:</strong> Cannot spend Robux, buy or trade items, or view transaction histories.
+              </span>
+            </div>
+            <div class="scope-item">
+              <span class="scope-item-bullet">•</span>
+              <span class="scope-item-text">
+                <strong>No Game Modification:</strong> Cannot alter your places, publish scripts, or affect your game servers.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloudflare Security Architecture Section -->
+    <section class="info-section container" id="security-architecture">
+      <div class="panel security-highlight" id="security-panel">
+        <div class="security-grid">
+          <div class="security-content">
+            <span class="security-badge">🔒 Cloudflare Workers Integration</span>
+            <h3>Zero-Retention Ephemeral Architecture</h3>
+            <p>
+              Your security is our absolute priority. To sync assets, the plugin communicates with a secure serverless <strong>Cloudflare Worker</strong> that processes authorization and upload requests.
+            </p>
+            
+            <div class="workflow-steps">
+              <div class="wf-step">
+                <div class="wf-num">1</div>
+                <div class="wf-text">
+                  <strong>Token Exchange:</strong> The OAuth token is forwarded from Roblox Studio to the Cloudflare Worker purely to sign the Roblox API request.
+                </div>
+              </div>
+              
+              <div class="wf-step">
+                <div class="wf-num">2</div>
+                <div class="wf-text">
+                  <strong>Ephemeral Transit:</strong> Assets and credentials exist only in the Worker's active RAM for the few milliseconds it takes to complete the upload to Roblox.
+                </div>
+              </div>
+              
+              <div class="wf-step">
+                <div class="wf-num">3</div>
+                <div class="wf-text">
+                  <strong>No Database Storage:</strong> We do not operate a database. Your tokens, designs, and Roblox information are **never stored** and are completely inaccessible to the developer.
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="security-visual-card" id="security-visual">
+            <div class="code-title">// Ephemeral Transit Flow</div>
+            <p style="margin-bottom: 0.75rem;">Roblox Studio (Plugin)</p>
+            <p style="margin-bottom: 0.75rem; color: var(--primary);">➔ Cloudflare Worker (In-Memory Processing)</p>
+            <p style="margin-bottom: 0.75rem; color: #10b981;">➔ Roblox API (Asset Uploaded)</p>
+            <p style="margin-bottom: 1.25rem;">➔ Response Returned to Studio</p>
+            <hr style="border: 0; border-top: 1px solid var(--border-glass); margin-bottom: 1rem;">
+            <div style="color: #ef4444; font-weight: bold;">[Result]</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">
+              Worker execution ends. Memory is immediately wiped. Developer storage = 0%
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="site-footer">
+    <div class="container footer-wrapper">
+      <div>
+        <p>&copy; 2026 UI Designer Sync. Not affiliated with Roblox Corporation.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.25rem; color: var(--text-muted);">
+          Roblox, the Roblox logo, and Roblox Studio are trademarks of Roblox Corporation.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+        <a href="terms.html" id="footer-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
