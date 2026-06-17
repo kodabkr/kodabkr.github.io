@@ -5,18 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI Designer Pro - Figma-to-Roblox Documentation</title>
   <meta name="description" content="Securely synchronize your UI designs and assets from Figma directly to your Roblox account. Read about our secure OAuth integration, assets:read/write scopes, and ephemeral Cloudflare Workers.">
-  
-  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Central Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Header -->
   <header id="site-header">
     <div class="container nav-wrapper">
       <div class="logo-area">
@@ -34,7 +29,6 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="container" id="hero-section">
       <div class="hero-layout">
         <div class="hero-copy">
@@ -52,19 +46,16 @@
             </a>
           </div>
         </div>
-        
         <div class="hero-visual">
           <img src="planet.png" alt="Mars Space Orb Graphic" class="hero-planet-img">
         </div>
       </div>
     </section>
 
-    <!-- Beige Frame Section -->
     <section class="container" id="beige-highlight-section">
       <div class="beige-card-frame">
         <div class="beige-card-layout">
           <div class="beige-card-visual" id="mockup-display">
-            <!-- Stylized CSS Code Terminal Visual -->
             <div style="font-family: monospace; font-size: 0.85rem; color: var(--text-sand); width: 100%; text-align: left; z-index: 5;">
               <p style="color: var(--accent-yellow); margin-bottom: 0.5rem;">// Synchronizing local design canvas...</p>
               <p style="margin-bottom: 0.3rem; color: #fff;">➔ Exporting 14 custom frames to assets API</p>
@@ -74,7 +65,6 @@
               <p style="color: var(--text-grey); font-size: 0.75rem;">Processing complete. Volatile edge cache destroyed.</p>
             </div>
           </div>
-          
           <div class="beige-card-info">
             <h3>EXPORT CANVAS SECURELY</h3>
             <p>
@@ -88,7 +78,6 @@
       </div>
     </section>
 
-    <!-- Split Section (Allowed vs Forbidden / Scopes Explanation) -->
     <section class="container split-layout" id="scopes-section">
       <div class="split-left">
         <span class="hero-tag" style="margin-bottom: 0.75rem;">Roblox OAuth Scopes</span>
@@ -97,9 +86,7 @@
           We request strictly scoped permissions to interface with your Roblox account. We never request full account controls, financial details, or editing rights to your places.
         </p>
       </div>
-      
       <div class="split-right">
-        <!-- Scope Card 1 -->
         <div class="right-card" id="card-assets-read">
           <div class="right-card-content">
             <h4>assets:read</h4>
@@ -107,8 +94,6 @@
           </div>
           <a href="#scope-validator" class="btn-rect btn-rect-outline-yellow" style="padding: 0.5rem 1rem; font-size: 0.75rem; flex-shrink: 0;">Details</a>
         </div>
-
-        <!-- Scope Card 2 -->
         <div class="right-card" id="card-assets-write">
           <div class="right-card-content">
             <h4>assets:write</h4>
@@ -119,7 +104,6 @@
       </div>
     </section>
 
-    <!-- Stat Banner using landscape.png -->
     <section class="stats-banner" id="statistics-banner">
       <div class="container stats-grid">
         <div class="stat-item">
@@ -145,15 +129,12 @@
       </div>
     </section>
 
-    <!-- Scope Allowed vs Forbidden Validator -->
     <section class="container" id="scope-validator" style="padding: 4rem 0;">
       <div class="heading-group" style="text-align: center; margin-bottom: 3rem;">
         <h2>Scope Capabilities</h2>
         <span class="ghost-title" style="left: 50%; transform: translateX(-50%);">CAPABILITIES</span>
       </div>
-      
       <div class="scope-grid-custom">
-        <!-- Allowed Card -->
         <div class="scope-list-card allowed" id="allowed-scopes">
           <div class="scope-list-header allowed">
             <span>✓</span> ALLOWED ACTIONS
@@ -177,8 +158,6 @@
             </span>
           </div>
         </div>
-
-        <!-- Forbidden Card -->
         <div class="scope-list-card forbidden" id="forbidden-scopes">
           <div class="scope-list-header forbidden">
             <span>✗</span> FORBIDDEN ACTIONS
@@ -205,7 +184,6 @@
       </div>
     </section>
 
-    <!-- Zero-Storage Transmission Detail -->
     <section class="container split-layout" id="security-transit-detail">
       <div class="split-left">
         <div class="heading-group">
@@ -219,7 +197,6 @@
           The OAuth access token and binary design data are processed purely in-memory (RAM) during transit and uploaded directly to official Roblox APIs. The worker never saves logs, holds records, or uses a database. The developer has absolutely no visibility or access to your credentials or files.
         </p>
       </div>
-      
       <div class="split-right" style="justify-content: center;">
         <div class="panel" style="border: 1px solid var(--border-light); padding: 2.5rem; background: #000;">
           <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; margin-bottom: 1rem; color: var(--accent-yellow);">Edge Transit Loop</h4>
@@ -234,15 +211,12 @@
       </div>
     </section>
 
-    <!-- Documentation Articles Grid -->
     <section class="container" id="documentation-section" style="padding: 4rem 0 6rem;">
       <div class="section-heading-center">
         <span class="hero-tag" style="margin-bottom: 0.75rem;">Documentation Center</span>
         <h3>Browse App Documentation</h3>
       </div>
-      
       <div class="doc-grid">
-        <!-- Card 1: Privacy Policy -->
         <div class="doc-card" id="doc-card-privacy">
           <div class="doc-card-sphere"></div>
           <span class="doc-card-date">June 2026</span>
@@ -250,8 +224,6 @@
           <p class="doc-card-desc">Detailed declarations outlining data privacy, token security, and the ephemeral transit loops processing your uploads.</p>
           <a href="privacy.html" class="btn-rect btn-rect-outline-yellow" id="btn-read-privacy">Read Policy</a>
         </div>
-
-        <!-- Card 2: Terms of Service -->
         <div class="doc-card" id="doc-card-terms">
           <div class="doc-card-sphere"></div>
           <span class="doc-card-date">June 2026</span>
@@ -259,8 +231,6 @@
           <p class="doc-card-desc">Terms governing the use of the Figma plugin, asset rights representation, and disclaimer of warranties.</p>
           <a href="terms.html" class="btn-rect btn-rect-outline-yellow" id="btn-read-terms">Read Terms</a>
         </div>
-
-        <!-- Card 3: Scope Setup -->
         <div class="doc-card" id="doc-card-setup">
           <div class="doc-card-sphere"></div>
           <span class="doc-card-date">Setup Guide</span>
@@ -272,7 +242,6 @@
     </section>
   </main>
 
-  <!-- Solid Beige Block Footer -->
   <footer id="site-footer">
     <div class="container">
       <div class="footer-columns">
@@ -282,7 +251,6 @@
             Secure, rapid assets export pipeline connecting your vector layout designs directly to Roblox Studio.
           </p>
         </div>
-        
         <div>
           <div class="footer-col-title">Documentation</div>
           <ul class="footer-links-list">
@@ -290,7 +258,6 @@
             <li><a href="terms.html" id="footer-terms-link">Terms of Service</a></li>
           </ul>
         </div>
-        
         <div>
           <div class="footer-col-title">Integrations</div>
           <ul class="footer-links-list">
@@ -299,7 +266,6 @@
           </ul>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <div>
           <p>&copy; 2026 UI Designer Pro. Not affiliated with Roblox Corporation.</p>
